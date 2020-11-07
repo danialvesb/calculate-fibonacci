@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Calcular Fibonacci</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./resources/assets/styles.css'>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="./resources/main.js" async></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="card-infos">
+            <span class="title">
+                <h4>Informe uma sequencia sequência separando por vírgula:</h4>
+            </span>
+            <div class="input">
+                <input type="text" placeholder="exemplo: 1,2,3" v-model="valueInput"></input>
+            </div>
+            <div class="input">
+                <h3>Fibonacci: {{ getFibonacci }}</h5>
+                <h3>Números: {{ getArrayNumbers }}</h5>
+                <h3>Números ordenados: {{ getArrayNumbersAsc }}</h5>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
