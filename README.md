@@ -1,4 +1,5 @@
 # calculate-years
 
-#Chico tem 1,50m e cresce 2 centímetros por ano, enquanto Juca tem 1,10m e cresce 3 centímetros por ano.
-#Construir um algoritmo que calcule e imprima quantos anos serão necessários para que Juca seja maior que Chico.
+#Criar algoritmos com um campo que possa receber apenas números e vírgulas, separe os valores enviados e valide aqueles que são um número válido da Sequência de Fibonacci e imprima os números #de forma crescente, conforme o exemplo:
+#CAMPO RECEBE: 1,13,55,21,5,83 
+#IMPRIME: 1,5,13,21,55
