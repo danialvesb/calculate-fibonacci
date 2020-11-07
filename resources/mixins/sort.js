@@ -1,7 +1,6 @@
 const sort = {
     methods: {
         quickSort(items, left, right) {
-            console.log(items);
             let index;
             if (items.length > 1) {
                 index = this.partition(items, left, right);

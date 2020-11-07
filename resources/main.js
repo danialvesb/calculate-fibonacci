@@ -1,15 +1,18 @@
 const vm = new Vue({
     el: '#app',
-    mixins: [sort],
+    mixins: [sort, format],
     data() {
         return {
             valueInput: '',
             items: [],
+            rangeForarray: 0,
         };
     },
     computed: {
         getFibonacci() {
-            return '';
+            return this.getArrayNumbersAsc.filter((item) => {
+                return this.isFibonacci(item);
+            });
         },
         getArrayNumbers() {
             return this.formatForNumbersArray(this.valueInput);
@@ -20,24 +23,24 @@ const vm = new Vue({
         },
     },
     methods: {
-        formatForNumbersArray(array) {
-            let arrayFull = array.split(',');
-            let arrayNumbersString = arrayFull.filter((item) => {
+        isFibonacci(param) {
+            let a = 0;
+            let b = 1;
+            if (param === a || param === b) {
+                return true;
+            };
 
-                return !isNaN(item) && !(item === '');
-            });
-            let arrayNumbersInterger = arrayNumbersString.map((item) => {
-                return parseInt(item);
-            })
-            return arrayNumbersInterger;
+            let c = a + b;
+
+            while (c <= param) {
+                if (c === param) {
+                    return true;
+                };
+                a = b;
+                b = c;
+                c = a + b;
+            }
+            return false;
         },
-        fibonacci(num, memo) {
-            memo = memo || {};
-
-            if (memo[num]) return memo[num];
-            if (num <= 1) return 1;
-
-            return memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo);
-        }
     },
 });

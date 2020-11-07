@@ -9,6 +9,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='./resources/assets/styles.css'>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="./resources/mixins/sort.js"></script>
+    <script src="./resources/mixins/format.js"></script>
     <script src="./resources/main.js" async></script>
 </head>
 
@@ -16,15 +17,17 @@
     <div id="app">
         <div class="card-infos">
             <span class="title">
-                <h4>Informe uma sequencia sequência separando por vírgula:</h4>
+                <h4>Informe uma sequência separando por vírgula:</h4>
             </span>
             <div class="input">
                 <input type="text" placeholder="exemplo: 1,2,3" v-model="valueInput"></input>
             </div>
             <div class="input">
-                <h3>Fibonacci: {{ getFibonacci }}</h5>
-                <h3>Números: {{ getArrayNumbers }}</h5>
-                <h3>Números ordenados: {{ getArrayNumbersAsc }}</h5>
+                <h3>Fibonacci:</h5>
+                    <strong v-for="(item, index) in getFibonacci" :key="index">
+                        <span v-if="index === 0">{{ item }}</span>
+                        <span v-else="index === 0">, {{ item }}</span>
+                    </strong>
             </div>
         </div>
     </div>
